@@ -1,0 +1,12 @@
+---
+const {imageProject, title, description, linkProject} = Astro.props
+---
+
+<div class="border rounded-lg shadow-lg">
+  <img class="bg-cover" src={imageProject} alt="">
+  <div class="px-2 py-6 flex flex-col gap-2">
+    <h3 class="font-semibold text-xl">{title}</h3>
+    <p class="font-thin text-xl">{description}</p>
+    <a href={linkProject} class="btn btn-accent">Saiba mais</a>
+  </div>
+</div>

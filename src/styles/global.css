@@ -8,3 +8,18 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
+.striped-background {
+  background: repeating-linear-gradient(
+    -45deg,
+    black,
+    black 25px,
+    orange 25px,
+    orange 50px
+  );
+  text-shadow: 2px 2px black;
+}
+
+.striped-background {
+  text-shadow: 2px 2px black;
+}
