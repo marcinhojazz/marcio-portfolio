@@ -1,4 +1,35 @@
 ---
+import Card from "./Card.astro";
 
 ---
 
+<section class="flex flex-col gap-6 px-4">
+  <h2 class="font-bold text-center text-2xl uppercase pt-12">Sobre mim</h2>
+  <p>
+    Olá! Sou Márcio Machado Pontes, e minha jornada no mundo digital começou há mais de [X anos] (ajuste conforme sua experiência). Desde então, venho combinando minha paixão por design, tecnologia e marketing para criar soluções digitais inovadoras que agregam valor e proporcionam experiências memoráveis.
+  </p>
+
+  <div class="flex flex-col gap-6">
+    <Card title="🎓 Formação e Educação">
+      <ul>
+        <li>Arquitetura e Urbanismo (2014 - 2017) - Incompleto</li>
+        <li>Ciência da Computação (2023) - Cursando</li>
+      </ul>
+    </Card>
+    <Card title="🛠 Habilidades e Expertise">
+      <p>
+        Minha expertise abrange uma ampla gama de habilidades, incluindo design UI/UX, desenvolvimento front-end, e estratégias avançadas de marketing digital. Estou sempre em busca de novos desafios e oportunidades para aplicar e expandir meu conjunto de habilidades.
+      </p>
+    </Card>
+    <Card title="🌱 Crescimento e Aprendizado">
+      <p>
+        Acredito firmemente no aprendizado contínuo e na evolução pessoal e profissional. Estou sempre em busca de novos conhecimentos, seja através de cursos, leituras ou trocas de experiências com outros profissionais da área.
+      </p>
+    </Card>
+    <Card title="🤝 Vamos Colaborar?">
+      <p>
+        Se você está buscando um profissional comprometido, com uma abordagem criativa e orientada a resultados, adoraria ouvir mais sobre seu projeto e explorar como podemos trabalhar juntos para alcançar seus objetivos.
+      </p>
+    </Card>
+  </div>
+</section>
