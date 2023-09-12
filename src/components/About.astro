@@ -3,15 +3,15 @@ import Card from "./Card.astro";
 
 ---
 
-<section class="flex flex-col gap-6 px-4 py-12">
+<section class="flex flex-col gap-6 px-4 py-12 lg:h-screen">
   <h2 class="font-bold text-center text-2xl uppercase pt-12">Sobre mim</h2>
-  <p>
+  <p class="text-center lg:px-52">
     Olá! Sou Márcio Machado Pontes, e minha jornada no mundo digital começou há mais de [X anos] (ajuste conforme sua experiência). Desde então, venho combinando minha paixão por design, tecnologia e marketing para criar soluções digitais inovadoras que agregam valor e proporcionam experiências memoráveis.
   </p>
 
-  <div class="flex flex-col gap-6">
+  <div class="grid lg:grid-cols-2 gap-6">
     <Card title="🎓 Formação e Educação">
-      <ul>
+      <ul class="list-disc list-inside">
         <li>Arquitetura e Urbanismo (2014 - 2017) - Incompleto</li>
         <li>Ciência da Computação (2023) - Cursando</li>
       </ul>
