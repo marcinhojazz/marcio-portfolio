@@ -1,69 +1,215 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SkillRating from "../components/SkillRating.astro";
+
+const skillSoftwares = [
+  {soft: "Cinema 4D", rate: 90},
+  {soft: "Photoshop", rate: 85},
+  {soft: "Blender", rate: 60},
+  {soft: "Excel", rate: 65},
+  {soft: "Figma/AdobeXD", rate: 82},
+  {soft: "Rhinoceros 3D", rate: 60},
+]
+
+const skillFrontEnd = [
+  "Javascript",
+  "HTML",
+  "CSS",
+  "React.JS",
+  "Next.JS",
+  "Vite.JS",
+  "Astro",
+  "TailwindCSS",
+  "Styled-Components",
+  "Three.JS",
+  "Aframe",
+  "React Three Fiber",
+  "WebGL",
+]
+
+const skill3D = [
+  "Realidade Virtual",
+  "Realidade Aumentada",
+  "Motion Graphics",
+  "Modelagem 3D",
+  "Animação",
+  "Rigging",
+  "Texturização",
+  "Renderização (ArchViz)",
+]
+const skillDesign = [
+  "Figma",
+  "Adobe XD",
+  "Adobe XD",
+]
+const skillMktDigital = [
+  "Figma",
+  "Adobe XD",
+]
+
+const experiencia = [
+  {
+    title: "Suporte de Help Desk e TI",
+    empresa: "FREST 3001 (04/2013 – 07/2014)",
+    descricao: "Na FREST 3001, uma empresa de tecnologia que oferece sistemas completos de gestão de restaurantes, forneci suporte remoto e presencial, implementei o sistema POS em desktops e tablets, configurei redes, atualizei e corrigi erros de banco de dados e sistema, e treinei a equipe e novas lojas sobre o uso do sistema."
+  },
+  {
+    title: "Design; Desenvolvedor e Co-Fundador",
+    empresa: "Projeto Razin Studio (2017 – 2020)",
+    descricao: "Co-fundei uma agência de Marketing Digital, onde desempenhei várias funções, incluindo a criação de artes gráficas e vídeos, marketing digital, SEO, automação, aquisição de clientes, levantamento de requisitos e suporte no desenvolvimento de diversos sites, aplicativos e plataformas web."
+  },
+  {
+    title: "Projetista BIM - Projeto Executivo da Universidade Federal de Ouro Preto (UFOP)",
+    empresa: "Schiffinno e Junqueira",
+    descricao: "Como designer líder no desenvolvimento do projeto de arquitetura executiva usando o software Revit da Autodesk, conduzi pesquisas de informações quantitativas e orçamento de materiais"
+  },
+  {
+    title: "Desenvolvedor e Design",
+    empresa: "Startup I2MW - Shell Ideation (12/2019 - 06/2020)",
+    descricao: "Trabalhei como designer e desenvolvedor para criar uma solução para gestão de inventário no processo de abertura de poços. Usei MarvelApp e AdobeXD para prototipagem e trabalhei com uma pilha de plataforma que incluía Python (Django e Django RestFramework) no backend e Bootstrap no frontend"
+  },
+  {
+    title: "Desenvolvedor Python",
+    empresa: "StratoStorm Studios (2021)",
+    descricao: "Na StratoStorm Studios, forneci suporte no redesenvolvimento de plugins e ferramentas internas de automação, usadas no software 3DsMax 2021 em seu pipeline de desenvolvimento de animação"
+  },
+  {
+    title: "Freelancer",
+    empresa: "",
+    descricao: "Planejamento e Estratégia de SEO e Marketing Digital Trabalhei em vários projetos de planejamento e estratégia de SEO e marketing digital. As responsabilidades incluíam otimizar sites para mecanismos de busca, criar estratégias de marketing digital para aumentar o tráfego orgânico e analisar métricas para avaliar o sucesso das estratégias implementadas."
+  },
+  {
+    title: "Hackaton ETH Samba, Desenvolvedor Front-End",
+    empresa: "Plataforma Vozes Seguras",
+    descricao: "Projeto Vozes Seguras (2023) Desenvolvi o front-end do projeto Vozes Seguras, uma plataforma on-chain para mulheres desabafarem anonimamente sobre casos de abuso, discriminação e violência. O projeto foi um dos vencedores do Hackathon ETHSamba 2023"
+  },
+  {
+    title: "",
+    empresa: "",
+    descricao: ""
+  },
+]
 
 ---
 
 <Layout>
-  <section class="w-full border flex flex-col lg:flex-row lg:justify-between gap-12 px-4 text-white">
-    <div class="bg-slate-700 lg:w-1/3 flex flex-col p-4 font-semibold rounded-lg">
-      <h3 class="font-extrabold text-4xl">Márcio Machado</h3>
-      <p>WebXR | SEO | Design</p>
-      <p>Rio de Janeiro, RJ, Brasil.</p>
-      <div class="divider divider-[red]"></div>
-      <div>
-        <h3 class="font-extrabold text-2xl">Competências</h3>
-        <ul>
-          <li><p>Design</p></li>
-          <li><p>SEO</p></li>
-          <li><p>Design</p></li>
-          <li><p>Estratégias de Tráfego Orgânico</p></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-extrabold text-2xl">Skills</h3>
+  <section class="">
+    <h1 class="text-center text-4xl">Perfil Completo</h1>
+    <div class="w-full flex flex-col lg:flex-row lg:justify-between gap-12 px-4 lg:px-20 py-12 text-white">
+      <div class="bg-slate-700 lg:w-1/3 flex flex-col p-4 font-semibold rounded-lg">
+        
         <div>
-          <h4 class="text-zinc-400">Softwares</h4>
-          <ul class="text-sm">
-            <li class="flex flex-row justify-between gap-4">
-              <p>Figma</p>
-              <div class="p-1 w-3/4 bg-red-500 flex">
-                <div class="bg-[yellow] w-[70%] p-1"></div>
-              </div>
-            </li>
-            <li class="flex flex-row justify-between gap-4">
-              <p>Cinema 4D</p>
-              <div class="p-1 w-3/4 bg-red-500 flex">
-                <div class="bg-[yellow] w-[85%] p-1"></div>
-              </div>
-            </li>
-            <li class="flex flex-row justify-between gap-4">
-              <p>Blender</p>
-              <div class="p-1 w-3/4 bg-red-500 flex">
-                <div class="bg-[yellow] w-[40%] p-1"></div>
-              </div>
-            </li>
-            <li class="flex flex-row justify-between gap-4">
-              <p>Revit</p>
-              <div class="p-1 w-3/4 bg-red-500 flex">
-                <div class="bg-[yellow] w-[90%] p-1"></div>
-              </div>
-            </li>
-            <li class="flex flex-row justify-between gap-4">
-              <p>Photoshop</p>
-              <div class="p-1 w-3/4 bg-red-500 flex">
-                <div class="bg-[yellow] w-[70%] p-1"></div>
-              </div>
-            </li>
+          <h3 class="font-extrabold text-4xl">Márcio Machado</h3>
+          <p>WebXR | SEO | Design</p>
+          <p>Rio de Janeiro, RJ, Brasil.</p>
+        </div>
+        
+        <!-- Principais Competências -->
+        <div>
+          <h3 class="font-extrabold text-2xl">Educação</h3>
+          <ul class="text-base font-light p-1">
+            <li><p>Arquitetura e Urbanismo <span class="text-xs">(2014 - 2017, incompleto)</span></p></li>
+            <li><p>Ciência da Computação <span class="text-xs">(2023 - Cursando)</span></p></li>
           </ul>
         </div>
+
+        <!-- Principais Competências -->
+        <div>
+          <h3 class="font-extrabold text-2xl">Principais Competências</h3>
+          <ul class="text-base font-light p-1">
+            <li><p>- Desenvolvedor Web 3D</p></li>
+            <li><p>- Generalista 3D</p></li>
+            <li><p>- SEO</p></li>
+            <li><p>- Design</p></li>
+          </ul>
+        </div>
+
+        <!-- Habilidades -->
+        <div id="skills">
+          <h3 class="font-extrabold text-2xl">Habilidades</h3>
+          <div>
+            <h4 class="text-zinc-200">Front End</h4>
+            <ul class="p-1 font-light text-sm">
+              {skillFrontEnd.map((skill) => (
+                <li>
+                  <p>{skill}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <!-- Generalista 3D -->
+          <div>
+            <h4 class="text-zinc-200">Generalista 3D</h4>
+            <ul class="p-1 font-light text-sm">
+              {skill3D.map((skill) => (
+                <li>
+                  <p>{skill}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <!-- Design Ux/Ui -->
+          <div>
+            <h4 class="text-zinc-200">Design Ux/Ui</h4>
+            <ul class="p-1 font-light text-sm">
+              {skillDesign.map((skill) => (
+                <li>
+                  <p>{skill}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <!-- Marketing Digital -->
+          <div>
+            <h4 class="text-zinc-200">Design Ux/Ui</h4>
+            <ul class="p-1 font-light text-sm">
+              {skillDesign.map((skill) => (
+                <li>
+                  <p>{skill}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="bg-slate-700 font-light flex lg:w-full flex-col p-4">
-      <h2 class="font-extrabold">Resumo Profissional</h2>
-      <p>WebXR | SEO | Design</p>
-      <p>Rio de Janeiro, RJ, Brasil.</p>
-      <div class="divider"></div>
-      <h3>Márcio Machado</h3>
+      <div class="bg-slate-300 text-slate-600 lg:w-2/3 flex flex-col p-4 font-semibold rounded-lg">
+        
+        <!-- Resumo Profissional -->
+        <div>
+          <h2 class="text-xl">Resumo Profissional</h2>
+          <div>
+            <p class="text-justify font-light whitespace-pre-line">
+              Atuando desde 2014 no mercado de tecnologia, design e marketing digital, tenho uma trajetória marcada pela inovação e empreendedorismo. Minha experiência abrange desde o suporte técnico em sistemas de gestão até a liderança de design em agências de marketing digital. Sou versátil, tendo atuado em startups e projetos de grande escala, como o projeto executivo da Universidade Federal de Ouro Preto.
+
+              Minha formação em Arquitetura e Urbanismo, juntamente com os estudos em Ciência da Computação, me proporcionou uma visão holística do design e da tecnologia. Sou especialista em Front-End, com destaque para tecnologias como React.JS, Next.JS e Three.JS, e também possuo habilidades avançadas como Generalista 3D, utilizando softwares como Cinema 4D e Blender.
+
+              No campo do marketing digital, tenho expertise em SEO, estratégias de tráfego orgânico e automação de marketing. Além disso, participei de projetos inovadores, como o Vozes Seguras, que foi um dos vencedores do Hackathon ETHSamba 2023, destacando-se como uma plataforma on-chain para mulheres.
+
+              Atualmente, busco oportunidades que me desafiem e permitam aplicar e expandir ainda mais meu conjunto de habilidades, especialmente em papéis de liderança e estratégia.
+            </p>
+          </div>
+        </div>
+
+        <!-- Experiência -->
+        <div>
+          <h2 class="text-2xl font-extrabold">Experiência</h2>
+          <div class="py-4">
+            <ul>
+              {experiencia.map((exp) => (
+                <li>
+                  <h3 class="text-xl">{exp.title}</h3>
+                  <p class="text-base font-normal">{exp.empresa}</p>
+                  <p class="font-light">{exp.descricao}</p>
+                  <div class="my-4 h border-b border-blue-500"></div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+        </div>
+        
+        
+      </div>
     </div>
   </section>
 </Layout>

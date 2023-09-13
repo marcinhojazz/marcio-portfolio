@@ -1,0 +1,10 @@
+---
+const { skillName, skillRate } = Astro.props;
+---
+
+<div class="flex flex-col mb-2">
+  <p class="text-sm mb-1">{skillName}</p>
+  <div class="p-1 w-full bg-slate-500 rounded-full">
+    <div class="bg-yellow-400 h-2 rounded-full" style={`width: ${skillRate}%`}></div>
+  </div>
+</div>
