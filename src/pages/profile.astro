@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SkillRating from "../components/SkillRating.astro";
+import DownloadResume from "../components/DownloadResume.astro";
 
 const skillSoftwares = [
   {soft: "Cinema 4D", rate: 90},
@@ -102,9 +103,7 @@ const experiencia = [
           <h3 class="font-extrabold text-4xl">Márcio Machado</h3>
           <p>WebXR | SEO | Design</p>
           <p>Rio de Janeiro, RJ, Brasil.</p>
-          <a href="https://drive.google.com/uc?export=download&id=1FtkUKyldrk4es8CxYAEN9F6NEhJKo1Nf" target="_blank" rel="noopener noreferrer">
-            <button class="btn btn-primary p-1 rounded my-2">Faça o download do meu currículo</button>
-          </a>
+          <DownloadResume />
         
         </div>
         

@@ -1,4 +1,5 @@
 ---
+import DownloadResume from "./DownloadResume.astro";
 import SocialLinks from "./SocialLinks.astro";
 
 ---
@@ -14,9 +15,7 @@ import SocialLinks from "./SocialLinks.astro";
       </p>
       <SocialLinks />
       <div class="lg:flex lg:gap-4 items-center">
-        <a href="https://drive.google.com/uc?export=download&id=1FtkUKyldrk4es8CxYAEN9F6NEhJKo1Nf" target="_blank" rel="noopener noreferrer">
-          <button class="btn btn-primary p-2 w-full my-2">Faça o download do meu currículo</button>
-        </a>
+        <DownloadResume />
         <a class="btn w-full lg:w-1/3 bg-gray-600 hover:text-black text-white" href="/profile" target="_blank">
           Veja meu perfil completo
         </a>
