@@ -3,18 +3,16 @@
 const { urlWebsite, title, description, image } = Astro.props
 ---
 
-<div class="mx-auto bg-white rounded-xl shadow-lg overflow-hidden md:max-w-2xl">
-  <div class="lg:flex">
-    <figure>
-      <img class="lg:w-36 object-cover md:h-full" src={'https://res.cloudinary.com/alkimera/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1695065649/marcio3dweb-portfolio/portfolio1_jlbiou.jpg?_s=public-apps'} alt="Modern building architecture">
-    </figure>
-    <div class="lg:p-8 p-4">
-      <p class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{title}</p>
-      <p></p>
-      <a href={urlWebsite} class="block mt-1 text-lg leading-tight font-medium text-black hover:underline" target="_blank">
-        {urlWebsite}
-      </a>
-      <!-- <p class="mt-2 text-slate-500">Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of places to do just that.</p> -->
-    </div>
+<div class="mx-auto bg-white rounded-xl shadow-lg overflow-hidden md:max-w-2xl h-auto md:h-40 flex flex-col md:flex-row">
+  <figure class="w-full md:w-1/4 flex-none">
+    <img class="w-full h-full object-cover" src="https://res.cloudinary.com/alkimera/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1695065649/marcio3dweb-portfolio/portfolio1_jlbiou.jpg?_s=public-apps" alt="Modern building architecture">
+  </figure>
+  <div class="lg:p-8 p-4 overflow-y-auto items-center">
+    <p class="uppercase tracking-wide text-xl text-black font-black">{title}</p>
+    <a href={urlWebsite} class="block mt-1 text-lg leading-tight font-medium text-sky-600 hover:underline break-words word-break:break-all" target="_blank">
+      {urlWebsite}
+    </a>
+    <!-- <p class="mt-2 text-slate-500">Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of places to do just that.</p> -->
   </div>
 </div>
+
