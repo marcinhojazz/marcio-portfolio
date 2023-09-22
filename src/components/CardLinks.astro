@@ -14,16 +14,21 @@ let { urlWebsite, title, image } = Astro.props;
 </div>
 
 <!-- Modal -->
-<div id="modal" class="fixed border hidden border-[red] top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center px-32 py-6">
-  <div class="bg-white p-4 rounded-lg w-full h-full relative overflow-auto">
-    <div class="flex justify-between items-center bg-gray-300 absolute w-full left-0 top-0 px-2 py-2">
+<div id="modal" class="fixed border hidden flex top-0 left-0 w-full h-full bg-black bg-opacity-50 justify-center items-center px-4 lg:px-32 py-6">
+  <div class="bg-white border border-[red] p-4 rounded-lg w-full h-full relative overflow-auto">
+    <div class="flex justify-between items-center bg-gray-300 absolute h-[8%] w-full left-0 top-0 px-2 py-2">
       <div class=" flex gap-2">
         <div class="h-1.5 w-1.5 rounded-full bg-black"></div>
         <div class="h-1.5 w-1.5 rounded-full bg-black"></div>
         <div class="h-1.5 w-1.5 rounded-full bg-black"></div>
       </div>
       <div class="border flex items-center w-2/3 rounded-full bg-sky-100">
-        <a href="#" class="text-center w-full hover:underline">www.site.com.br</a>
+        <a target="_blank" href={urlWebsite} class="text-center w-full hover:underline">
+          <div class="flex justify-center items-center gap-1 lg:gap-4">
+            <p class="text-sm inline-block">{urlWebsite}</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.413-.588T3 19V5q0-.825.588-1.413T5 3h7v2H5v14h14v-7h2v7q0 .825-.588 1.413T19 21H5Zm4.7-5.3l-1.4-1.4L17.6 5H14V3h7v7h-2V6.4l-9.3 9.3Z"/></svg>
+          </div>
+        </a>
       </div>
       <div class="">
         <button data-action="closeModal" class="">
@@ -32,23 +37,44 @@ let { urlWebsite, title, image } = Astro.props;
       </div>
     </div>
     <!-- <button data-action="closeModal" class="absolute top-2 right-2">X</button> -->
-    <div id="iframeContainer" class="relative border border-[red] mt-12 w-full h-[88%]"></div>
+    <div id="iframeContainer" class="absolute bottom-0 left-0 h-[92%] mt-12 w-full "></div>
   </div>
 </div>
 
+<!-- ... (resto do código) ... -->
+
 <script>
-  document.body.addEventListener('click', function(event) {
-    const modal = document.getElementById('modal');
-    const iframeContainer = document.getElementById('iframeContainer');
-    if (event.target.dataset.action === 'openModal') {
-      const iframe = document.createElement('iframe');
-      iframe.src = event.target.dataset.url;
-      iframe.className = 'w-full h-full';
-      iframeContainer.innerHTML = ''; // Clear previous iframe
-      iframeContainer.appendChild(iframe);
-      modal.classList.remove('hidden');
-    } else if (event.target.dataset.action === 'closeModal' || !modal.contains(event.target)) {
-      modal.classList.add('hidden');
+  const modal = document.getElementById('modal');
+  const iframeContainer = document.getElementById('iframeContainer');
+
+  // Função para abrir o modal
+  function openModal(event) {
+    const iframe = document.createElement('iframe');
+    iframe.src = event.target.dataset.url;
+    iframe.className = 'w-full h-full';
+    iframeContainer.innerHTML = ''; // Clear previous iframe
+    iframeContainer.appendChild(iframe);
+    modal.classList.remove('hidden');
+  }
+
+  // Função para fechar o modal
+  function closeModal() {
+    modal.classList.add('hidden');
+  }
+
+  // Adicionando manipuladores de eventos
+  const openModalButtons = document.querySelectorAll('[data-action="openModal"]');
+  openModalButtons.forEach(button => {
+    button.addEventListener('click', openModal);
+  });
+
+  const closeModalButton = document.querySelector('[data-action="closeModal"]');
+  closeModalButton.addEventListener('click', closeModal);
+
+  // Fechar o modal ao clicar fora dele
+  modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      closeModal();
     }
   });
 </script>
