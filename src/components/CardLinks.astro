@@ -1,18 +1,54 @@
 ---
-
-const { urlWebsite, title, description, image } = Astro.props
+import { Image } from "astro:assets";
+let { urlWebsite, title, image } = Astro.props;
 ---
 
-<div class="mx-auto bg-white rounded-xl shadow-lg overflow-hidden md:max-w-2xl h-auto md:h-40 flex flex-col md:flex-row">
-  <figure class="h-32 w-full md:w-1/4 flex-none">
-    <img class="w-full h-full object-cover" src="https://res.cloudinary.com/alkimera/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1695065649/marcio3dweb-portfolio/portfolio1_jlbiou.jpg?_s=public-apps" alt="Modern building architecture">
+<div class="bg-white rounded-lg flex flex-col md:flex-row lg:flex-row lg:items-center md:items-center overflow-hidden">
+  <figure>
+    {image && <Image src={image || null} alt={title} class="lg:w-32 md:w-64 h-36 object-cover"/>}
   </figure>
-  <div class="lg:p-8 p-4 overflow-y-auto items-center">
-    <p class="uppercase tracking-wide text-xl text-black font-black">{title}</p>
-    <a href={urlWebsite} class="block mt-1 text-lg leading-tight font-medium text-sky-600 hover:underline break-words word-break:break-all" target="_blank">
-      {urlWebsite}
-    </a>
-    <!-- <p class="mt-2 text-slate-500">Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of places to do just that.</p> -->
+  <div class="p-4 w-full">
+    <p class="text-2xl font-black">{title}</p>
+    <button data-action="openModal" data-url={urlWebsite} class="text-sky-600">{urlWebsite}</button>
   </div>
 </div>
 
+<!-- Modal -->
+<div id="modal" class="fixed border hidden border-[red] top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center px-32 py-6">
+  <div class="bg-white p-4 rounded-lg w-full h-full relative overflow-auto">
+    <div class="flex justify-between items-center bg-gray-300 absolute w-full left-0 top-0 px-2 py-2">
+      <div class=" flex gap-2">
+        <div class="h-1.5 w-1.5 rounded-full bg-black"></div>
+        <div class="h-1.5 w-1.5 rounded-full bg-black"></div>
+        <div class="h-1.5 w-1.5 rounded-full bg-black"></div>
+      </div>
+      <div class="border flex items-center w-2/3 rounded-full bg-sky-100">
+        <a href="#" class="text-center w-full hover:underline">www.site.com.br</a>
+      </div>
+      <div class="">
+        <button data-action="closeModal" class="">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m8.4 17l3.6-3.6l3.6 3.6l1.4-1.4l-3.6-3.6L17 8.4L15.6 7L12 10.6L8.4 7L7 8.4l3.6 3.6L7 15.6L8.4 17Zm3.6 5q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- <button data-action="closeModal" class="absolute top-2 right-2">X</button> -->
+    <div id="iframeContainer" class="relative border border-[red] mt-12 w-full h-[88%]"></div>
+  </div>
+</div>
+
+<script>
+  document.body.addEventListener('click', function(event) {
+    const modal = document.getElementById('modal');
+    const iframeContainer = document.getElementById('iframeContainer');
+    if (event.target.dataset.action === 'openModal') {
+      const iframe = document.createElement('iframe');
+      iframe.src = event.target.dataset.url;
+      iframe.className = 'w-full h-full';
+      iframeContainer.innerHTML = ''; // Clear previous iframe
+      iframeContainer.appendChild(iframe);
+      modal.classList.remove('hidden');
+    } else if (event.target.dataset.action === 'closeModal' || !modal.contains(event.target)) {
+      modal.classList.add('hidden');
+    }
+  });
+</script>
