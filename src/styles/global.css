@@ -27,3 +27,7 @@
 .striped-background {
   text-shadow: 2px 2px black;
 }
+
+#spline-container {
+  overflow: hidden;
+}

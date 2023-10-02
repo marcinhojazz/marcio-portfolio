@@ -7,13 +7,26 @@ import SocialLinks from './SocialLinks.astro';
 <header>
 	<nav class="py-4 lg:px-6 flex gap-4 flex-col justify-center items-center lg:flex-row lg:justify-between">
 		<h2><a href="/" class="font-bold text-2xl">{SITE_TITLE}</a></h2>
-		<div class="flex gap-2 text-2xl">
-			<HeaderLink href="/">Home</HeaderLink>
+		<div id="navLinks" class="flex gap-2 text-2xl">
+			<HeaderLink id="homeLink" href="/">Home</HeaderLink>
 			<!-- <HeaderLink href="/blog">Blog</HeaderLink> -->
 			<HeaderLink href="#sobre">Sobre</HeaderLink>
-			<HeaderLink href="/profile">Perfil</HeaderLink>
 			<HeaderLink href="#portfolio">Portfolio</HeaderLink>
+			<HeaderLink href="/profile">Perfil</HeaderLink>
 		</div>
 		<SocialLinks />
 	</nav>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.getElementById('navLinks');
+    const homeLink = document.getElementById('homeLink');
+    
+    if (navLinks && homeLink && window.location.pathname === '/profile') {
+      navLinks.innerHTML = ''; // Limpa todos os links
+      navLinks.appendChild(homeLink); // Adiciona apenas o link "Home"
+    }
+});
+
+</script>
