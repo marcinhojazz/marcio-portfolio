@@ -1,10 +1,14 @@
 ---
+import NavLinks from "./NavLinks.astro";
 import SocialLinks from "./SocialLinks.astro";
 const today = new Date();
 ---
 
-<footer class="flex flex-col justify-center items-center text-center gap-4 py-12">
-	&copy; {today.getFullYear()} Márcio Machado Pontes. Todos os direitos reservados.
+<footer class="bg-gray-900 text-white flex flex-col justify-center items-center text-center gap-4 py-12">
+	<div class="flex flex-col lg:flex-row justify-center items-center lg:justify-between w-full lg:mx-auto lg:w-[960px] gap-4">
+		<NavLinks />
+		&copy; {today.getFullYear()} Márcio Machado Pontes. Todos os direitos reservados.
+	</div>
 	<SocialLinks />
 </footer>
 
