@@ -8,7 +8,7 @@ import SocialLinks from "./SocialLinks.astro";
   <h2 class="text-center text-4xl uppercase font-extrabold">Contato</h2>
   
   <div class="flex flex-col lg:flex-row lg:justify-between py-12">
-    <div class="flex flex-col gap-4 lg:w-1/2">
+    <div class="flex flex-col gap-4 lg:w-1/2 h-full">
       <h3 class="text-xl font-semibold">Entre em contato!</h3>
       <p>
         Olá! Se você chegou até aqui, provavelmente tem interesse em saber mais sobre meu trabalho ou tem alguma proposta em mente. Adoraria ouvir de você. Preencha o formulário e entrarei em contato o mais breve possível.
@@ -21,7 +21,8 @@ import SocialLinks from "./SocialLinks.astro";
         </a>
       </div>
     </div>
-    <form class="mt-12 lg:w-1/2" action="https://formsubmit.co/marciomachadopontes@gmail.com" method="POST">
+    <form class="lg:w-1/2" action="https://formsubmit.co/marciomachadopontes@gmail.com" method="POST">
+      <h4 class="text-xl py-6">Preencha o formulário de contato abaixo:</h4>
       <div class="flex flex-col gap-4">
         <input class="rounded-md border p-2" type="text" name="name" class="" placeholder="digite o seu nome" required>
         <input class="rounded-md border p-2" type="email" name="email" class="" placeholder="digite o seu email" required>
