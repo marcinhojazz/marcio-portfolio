@@ -30,7 +30,7 @@ const listProjects = [
   {title: "Vozes Seguras (Hackaton)", link: "https://sv-platform.vercel.app/", image: alkVozesSeguras},
   {title: "Consulta Empresas (Dev Web)", link: "https://consultaempresas.netlify.app/", image: alkConsulta},
   {title: "Mischief 3D", link: "https://mischief3d.netlify.app", image: alkMischief},
-  {title: "Marcio Machado Portfolio 2", link: "https://marciomachado-portfolio.netlify.app", image: "", image: alkMarcio3dsite},
+  {title: "Marcio Machado Portfolio 2", link: "https://marciomachado-portfolio.netlify.app", image: alkMarcio3dsite},
   {title: "Scroll Gallery", link: "https://alkimeraxr-scrollgallery.netlify.app", image: alkScroll},
   {title: "Alkimera XR Astro + ThreeJS + GLSL", link: "https://alkimeraxr-demos.netlify.app", image: alkXRDemos},
   {title: "Alkimera Mindfulness", link: "https://alkimera-mindfulness.netlify.app", image: alkMindfulness},
@@ -39,7 +39,7 @@ const listProjects = [
   {title: "Behance", link: "https://www.behance.net/mischief3D", image: behanceMarcio},
   {title: "I2MW, Shell Ideation - P 1", link: "https://marvelapp.com/prototype/ddbdi90/screen/65618284", image: protoShell1},
   {title: "I2MW, Shell Ideation - P 2", link: "https://xd.adobe.com/view/c61a8307-7258-4b39-9a3d-1527430fde78-9349/", image: protoShell2},
-  {title: "Cine Guru", link: "https://cineguru.netlify.app/", imagem: cineGuru},
+  {title: "Cine Guru", link: "https://cineguru.netlify.app/", image: cineGuru},
 ]
 
 const {title, link, imagem} = Astro.props
@@ -56,7 +56,7 @@ const {title, link, imagem} = Astro.props
     <ul class="lg:grid lg:grid-cols-2 justify-center flex flex-col gap-6">
         {listProjects.map((project) => (
           <li>
-            <CardLinks image={project.image} title={project.title} description={project.description} urlWebsite={project.link}/>
+            <CardLinks image={project.image} title={project.title} urlWebsite={project.link}/>
 
           </li>
         ))}
