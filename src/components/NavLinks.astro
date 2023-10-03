@@ -1,0 +1,24 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+---
+
+<div class="flex gap-2">
+  <HeaderLink id="homeLink" href="/">Home</HeaderLink>
+  <!-- <HeaderLink href="/blog">Blog</HeaderLink> -->
+  <HeaderLink href="#sobre">Sobre</HeaderLink>
+  <HeaderLink href="#portfolio">Portfolio</HeaderLink>
+  <HeaderLink href="/profile">Perfil</HeaderLink>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.getElementById('navLinks');
+    const homeLink = document.getElementById('homeLink');
+    
+    if (navLinks && homeLink && window.location.pathname === '/profile') {
+      navLinks.innerHTML = ''; // Limpa todos os links
+      navLinks.appendChild(homeLink); // Adiciona apenas o link "Home"
+    }
+});
+
+</script>
