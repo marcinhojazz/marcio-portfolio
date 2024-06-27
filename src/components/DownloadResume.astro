@@ -1,7 +1,7 @@
 ---
-const {label} = Astro.props
+const { label, class: className } = Astro.props;
 ---
 
-<a href="https://docs.google.com/document/d/181SeGfxoZqtr9FOl2Bky67gdsc7KfkImPV7wGelE4Wo/export?format=pdf">
-  <button class="btn btn-primary p-2 w-full my-2">Faça o download do meu currículo</button>
+<a class={`btn btn-primary p-2 w-full my-2 ${className}`} href="https://docs.google.com/document/d/1M6ezjeCDQU7t6EJydXqB6HCp7HLCBr8GOXN6O0jGqeo/export?format=pdf">
+  Faça o download do meu currículo
 </a>

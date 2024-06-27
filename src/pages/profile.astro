@@ -50,45 +50,54 @@ const skillMktDigital = [
 
 const experiencia = [
   {
-    title: "Suporte de Help Desk e TI",
-    empresa: "FREST 3001 (04/2013 – 07/2014)",
-    descricao: "Na FREST 3001, uma empresa de tecnologia que oferece sistemas completos de gestão de restaurantes, forneci suporte remoto e presencial, implementei o sistema POS em desktops e tablets, configurei redes, atualizei e corrigi erros de banco de dados e sistema, e treinei a equipe e novas lojas sobre o uso do sistema."
+    title: "Desenvolvedor Front-End, Mayatec",
+    periodo: "15/07/2023 - 23/01/2024",
+    descricao: [
+      "- Desenvolvi o sistema de design da nova aplicação web utilizando Vue e Quasar.",
+      "- Documentei o sistema com Storybook e implementei testes unitários com Testing-Library/Vitest, aumentando a estabilidade em 30%.",
+      "- Criação de protótipos no Figma, facilitando a comunicação entre as equipes."
+    ],
   },
   {
-    title: "Design; Desenvolvedor e Co-Fundador",
-    empresa: "Projeto Razin Studio (2017 – 2020)",
-    descricao: "Co-fundei uma agência de Marketing Digital, onde desempenhei várias funções, incluindo a criação de artes gráficas e vídeos, marketing digital, SEO, automação, aquisição de clientes, levantamento de requisitos e suporte no desenvolvimento de diversos sites, aplicativos e plataformas web."
+    title: "Desenvolvedor Front-End, Vozes Seguras - Hackaton ETH Samba",
+    periodo: "04/2023",
+    descricao: [
+      "- Desenvolvi a plataforma on-chain para mulheres compartilharem anonimamente casos de abuso.",
+      "- Utilizamos Next.Js, Node, e Solidity, ganhando o ETHSamba Hackathon 2023.",
+    ],
   },
   {
-    title: "Projetista BIM - Projeto Executivo da Universidade Federal de Ouro Preto (UFOP)",
-    empresa: "Schiffinno e Junqueira",
-    descricao: "Como designer líder no desenvolvimento do projeto de arquitetura executiva usando o software Revit da Autodesk, conduzi pesquisas de informações quantitativas e orçamento de materiais"
+    title: "Designer e Desenvolvedor, Shell Ideation, Startup I2MW",
+    periodo: "12/2019 - 06/2020",
+    descricao: [
+      "- Desenvolvi uma solução de gerenciamento de estoque para o processo de perfuração de poços.",
+      "- Utilizei MarvelApp e Adobe XD para a prototipagem, Python com Django e Django Rest Framework no backend, e Bootstrap no frontend para criar interfaces responsivas e eficientes.",
+    ],
   },
   {
-    title: "Desenvolvedor e Design",
-    empresa: "Startup I2MW - Shell Ideation (12/2019 - 06/2020)",
-    descricao: "Trabalhei como designer e desenvolvedor para criar uma solução para gestão de inventário no processo de abertura de poços. Usei MarvelApp e AdobeXD para prototipagem e trabalhei com uma pilha de plataforma que incluía Python (Django e Django RestFramework) no backend e Bootstrap no frontend"
+    title: "Desenvolvimento Backend, Python, StratoStorm Studios",
+    periodo: "2021",
+    descricao: [
+      "- Forneci suporte na recriação de plugins internos e ferramentas de automação para a empresa de produção StratoStorm, utilizando o software 3DsMax 2021.",
+    ],
   },
   {
-    title: "Desenvolvedor Python",
-    empresa: "StratoStorm Studios (2021)",
-    descricao: "Na StratoStorm Studios, forneci suporte no redesenvolvimento de plugins e ferramentas internas de automação, usadas no software 3DsMax 2021 em seu pipeline de desenvolvimento de animação"
+    title: "Designer, Desenvolvedor e Co-Fundador, Projeto Razin Studio",
+    periodo: "2017 - 2020",
+    descricao: [
+      "- Co-fundei uma agência de Marketing Digital, onde atuei em diversas funções, incluindo design gráfico, criação de vídeos, marketing digital, SEO, automação, aquisição de clientes, levantamento de requisitos, e suporte no desenvolvimento de diversos sites, aplicativos e plataformas web.",
+    ],
   },
   {
-    title: "Freelancer",
-    empresa: "",
-    descricao: "Planejamento e Estratégia de SEO e Marketing Digital Trabalhei em vários projetos de planejamento e estratégia de SEO e marketing digital. As responsabilidades incluíam otimizar sites para mecanismos de busca, criar estratégias de marketing digital para aumentar o tráfego orgânico e analisar métricas para avaliar o sucesso das estratégias implementadas."
+    title: "Help Desk and IT Support, FREST 3001",
+    periodo: "04/2013 - 07/2014",
+    descricao: [
+      "- Desempenhei um papel fundamental na prestação de suporte técnico, tanto remoto quanto presencial.",
+      "- Implementação do sistema de ponto de venda (POS) em desktops e tablets, configuração de rede para otimização de desempenho, atualizações contínuas e resolução de erros em bancos de dados e sistemas essenciais.",
+      "- Treinei funcionários em diversas novas lojas, garantindo sua prontidão para utilizar o sistema de maneira eficaz."
+    ],
   },
-  {
-    title: "Hackaton ETH Samba, Desenvolvedor Front-End",
-    empresa: "Plataforma Vozes Seguras",
-    descricao: "Projeto Vozes Seguras (2023) Desenvolvi o front-end do projeto Vozes Seguras, uma plataforma on-chain para mulheres desabafarem anonimamente sobre casos de abuso, discriminação e violência. O projeto foi um dos vencedores do Hackathon ETHSamba 2023"
-  },
-  {
-    title: "",
-    empresa: "",
-    descricao: ""
-  },
+  
 ]
 
 ---
@@ -201,8 +210,12 @@ const experiencia = [
               {experiencia.map((exp) => (
                 <li>
                   <h3 class="text-xl">{exp.title}</h3>
-                  <p class="text-base font-normal">{exp.empresa}</p>
-                  <p class="font-light">{exp.descricao}</p>
+                  <p class="text-base font-normal break-before-column">{exp.periodo}</p>
+                  <p class="font-light">{exp.descricao[0]}</p>
+                  <p class="font-light">{exp.descricao[1]}</p>
+                  <p class="font-light">{exp.descricao[2]}</p>
+                  <p class="font-light">{exp.descricao[3]}</p>
+                  
                   <div class="my-4 h border-b border-blue-500"></div>
                 </li>
               ))}

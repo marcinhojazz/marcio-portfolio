@@ -21,7 +21,10 @@ import protoShell1 from "../../src/assets/images/protoShell1.png";
 import protoShell2 from "../../src/assets/images/protoShell2.png";
 import cineGuru from "../../src/assets/images/cineGuru.png";
 
+
 const listProjects = [
+  {title: "Alkimera Avatar Assistant", link: "https://alkimera-avatarlab.netlify.app/", image: 'https://res.cloudinary.com/dwofkc7hj/image/upload/f_auto,q_auto/v1/PORTFOLIO-MARCIOWEB3D/yesfawertdtkdywekjyo'},
+  {title: "Real Viewer", link: "https://real-viewer.netlify.app/", image: 'https://res.cloudinary.com/dwofkc7hj/image/upload/f_auto,q_auto/v1/PORTFOLIO-MARCIOWEB3D/mwu856p9pm6tkjwqbpul'},
   {title: "Alkimera Metaverso", link: "https://alkimera-metaverso.netlify.app", image: alkMeta},
   {title: "Alkimera Dissolve Material", link: "https://alkimera-dissolvematerial.netlify.app/", image: alkDissolve},
   {title: "Alkimera Mesh Portal Material", link: "https://alkimera-meshportalmaterial.netlify.app/", image: alkMeshPortal},
@@ -45,13 +48,13 @@ const listProjects = [
 const {title, link, imagem} = Astro.props
 ---
 
-<section id="portfolio" class="px-4 flex flex-col gap-2 py-6 bg-gray-900">
+<section id="portfolio" class="flex flex-col gap-2 py-6 bg-gray-900">
   <div class="striped-background py-6 text-white">
     <h2 class="font-extrabold text-center text-5xl uppercase">Portfólio</h2>
-    <p class="text-center bg-black py-1">Em construção, aguarde!</p>
   </div>
-  <p class="font-bold uppercase text-center py-6 text-white">Mas você pode conferir alguns trabalhos nos links abaixo:</p>
-  <div class="">
+  <p class="font-bold uppercase text-center py-6 text-white">Confira alguns links de portfólio abaixo:</p>
+  <div class="lg:px-10 px-4">
+    <p class="text-white mb-4 font-thin underline text-md">Clique nos cards para abrir sem sair da página</p>
 
     <ul class="lg:grid lg:grid-cols-2 justify-center flex flex-col gap-6">
         {listProjects.map((project) => (

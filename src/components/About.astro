@@ -1,11 +1,12 @@
 ---
 import Card from "./Card.astro";
+import DownloadResume from "./DownloadResume.astro";
 
 ---
 
-<section id="sobre" class="flex flex-col gap-6 px-4 py-12 lg:h-screen">
-  <h2 class="font-bold text-center text-2xl uppercase pt-12">Sobre mim</h2>
-  <p class="text-center lg:px-52">
+<section id="sobre" class="flex flex-col gap-6 px-4 lg:px-10 py-12 min-h-screen">
+  <h2 class="font-bold text-center text-4xl uppercase pt-12">Sobre mim</h2>
+  <p class="text-left text-2xl">
     Olá! Sou Márcio Machado Pontes, e minha jornada no mundo digital começou há mais de 7 anos atrás, quando resolvi abrir uma agência de Marketing Digital junto com um amigo e sócio. Desde então, venho combinando minha paixão por design, tecnologia e marketing para criar soluções digitais inovadoras que agregam valor e proporcionam experiências memoráveis.
   </p>
 
@@ -31,5 +32,9 @@ import Card from "./Card.astro";
         Se você está buscando um profissional comprometido, com uma abordagem criativa e orientada a resultados, adoraria ouvir mais sobre seu projeto e explorar como podemos trabalhar juntos para alcançar seus objetivos.
       </p>
     </Card>
+    <div class="animate-pulse">
+      <DownloadResume />
+    </div>
+
   </div>
 </section>
