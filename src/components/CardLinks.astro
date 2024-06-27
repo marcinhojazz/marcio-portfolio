@@ -6,7 +6,7 @@ const { urlWebsite, title, image } = Astro.props;
 
 <div class="bg-white rounded-lg flex flex-col md:flex-row lg:flex-row lg:items-center md:items-center overflow-hidden">
   <figure>
-    {image && <Image width="300" height="300" src={image || null} alt={title} class="lg:w-32 md:w-64 h-36 object-cover"/>}
+    {image && <Image width="600" height="600" src={image || null} alt={title} class="lg:w-32 md:w-64 h-36 object-cover"/>}
   </figure>
   <div class="p-4 w-full">
     <p class="lg:text-2xl text-xl font-black">{title}</p>
